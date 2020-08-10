@@ -1,0 +1,16 @@
+<form>
+  <input type="text" [(ngModel)]="todo.name" name="name" class="form-control" />
+  <button
+    type="submit"
+    (click)="addTodo()"
+    class="btn btn-primary form-control my-2"
+  >
+    Add
+  </button>
+</form>
+
+<app-todo
+  *ngFor="let item of todos"
+  [todo]="item"
+  (onDelete)="handleDelete($event)"
+></app-todo>
